@@ -6,3 +6,9 @@
     --cor-contraste: #C193F6;
     --cor-botao: #7514E3;
 }
+
+body{
+    max-width: 100vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}

@@ -1,65 +1,53 @@
-// ========================================
-// SCRIPT.JS - BLOG
-// ========================================
+// ==========================================
+// CONTADOR DE CURTIDAS
+// ==========================================
 
-// Aguarda o carregamento completo da página
-document.addEventListener("DOMContentLoaded", function () {
+const botoes = document.querySelectorAll("article button");
 
-    // ========================================
-    // CONTADOR DE CURTIDAS
-    // ========================================
+botoes.forEach((botao) => {
 
-    const botoesCurtir = document.querySelectorAll(".like-button");
+    botao.addEventListener("click", () => {
 
-    botoesCurtir.forEach(function (botao) {
+        // Encontra o artigo onde o botão foi clicado
+        const artigo = botao.closest("article");
 
-        botao.addEventListener("click", function () {
+        // Encontra o título do artigo
+        const titulo = artigo.querySelector("h2").textContent;
 
-            // Encontra o número de curtidas dentro do botão
-            const contador = botao.querySelector("span");
+        // Pega o emoji do botão
+        const emoji = botao.textContent.includes("❤️") ? "coracao" : "curtida";
 
-            // Pega o número atual
-            let curtidas = Number(contador.textContent);
+        // Cria uma identificação única para cada botão
+        const chave = "curtida_" + titulo + "_" + emoji;
 
-            // Adiciona uma curtida
-            curtidas++;
+        // Verifica se a pessoa já curtiu
+        const jaCurtiu = localStorage.getItem(chave);
 
-            // Atualiza o número na tela
-            contador.textContent = curtidas;
+        if (jaCurtiu === "sim") {
 
-            // Adiciona a classe para mudar a aparência
-            botao.classList.add("curtido");
+            alert("Você já curtiu este artigo!");
 
-        });
+            return;
+        }
 
-    });
+        // Pega o contador
+        const contador = botao.querySelector("span");
 
+        // Aumenta o número de curtidas
+        let numero = Number(contador.textContent);
 
-    // ========================================
-    // ANIMAÇÃO DOS CARDS
-    // ========================================
+        numero++;
 
-    const artigos = document.querySelectorAll("article");
+        contador.textContent = numero;
 
-    artigos.forEach(function (artigo, index) {
+        // Guarda no navegador que já curtiu
+        localStorage.setItem(chave, "sim");
 
-        // Adiciona um pequeno atraso entre os cards
-        artigo.style.animationDelay = (index * 0.15) + "s";
+        // Desativa o botão
+        botao.disabled = true;
 
-    });
-
-
-    // ========================================
-    // EFEITO NOS LINKS
-    // ========================================
-
-    const links = document.querySelectorAll("a");
-
-    links.forEach(function (link) {
-
-        link.addEventListener("mouseenter", function () {
-            link.style.transition = "0.3s";
-        });
+        // Muda a aparência
+        botao.classList.add("curtido");
 
     });
 

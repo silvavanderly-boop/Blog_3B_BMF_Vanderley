@@ -1,6 +1,6 @@
-/* ================================
-   CONFIGURAÇÃO GERAL
-================================ */
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
 
 * {
     margin: 0;
@@ -10,226 +10,221 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f3f7;
-    color: #29252f;
+    background-color: #f4f1f8;
+    color: #292333;
     line-height: 1.6;
 }
 
 
-/* ================================
+/* =========================================
    CABEÇALHO
-================================ */
+========================================= */
 
 header {
-    background: linear-gradient(135deg, #4b2e83, #7652a8);
+    background: linear-gradient(135deg, #5b3b8c, #8b65b5);
     color: white;
     text-align: center;
-    padding: 55px 20px;
-    margin-bottom: 45px;
+    padding: 50px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 header h1 {
     font-size: 38px;
-    font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 header p {
-    font-size: 17px;
-    color: #eee8f7;
+    font-size: 18px;
+    opacity: 0.9;
 }
 
 
-/* ================================
-   CONTEÚDO PRINCIPAL
-================================ */
+/* =========================================
+   ÁREA PRINCIPAL
+========================================= */
 
 main {
     width: 90%;
-    max-width: 1150px;
-    margin: 0 auto 60px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
 
+
+/* =========================================
+   ORGANIZAÇÃO DOS ARTIGOS
+========================================= */
+
+main {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
 
 
-/* ================================
+/* =========================================
    CARDS
-================================ */
+========================================= */
 
 article {
-    background: #ffffff;
-
-    border-radius: 18px;
-
+    background-color: white;
+    border-radius: 16px;
     overflow: hidden;
 
-    border: 1px solid #e8e3ed;
-
-    box-shadow: 0 6px 18px rgba(50, 35, 70, 0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
 
-    animation: entrada 0.7s ease both;
+    animation: aparecer 0.8s ease both;
 }
+
+
+/* Efeito quando passa o mouse */
 
 article:hover {
-    transform: translateY(-6px);
+    transform: translateY(-7px);
 
-    box-shadow: 0 14px 30px rgba(50, 35, 70, 0.16);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.20);
 }
 
 
-/* ================================
-   IMAGENS
-================================ */
+/* =========================================
+   IMAGENS DOS ARTIGOS
+========================================= */
 
 article > img {
     width: 100%;
-    height: 240px;
-
-    display: block;
+    height: 230px;
 
     object-fit: cover;
 
+    display: block;
+
     transition:
-        transform 0.35s ease,
-        filter 0.35s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
+
+
+/* Efeito solicitado na atividade */
 
 article:hover > img {
-    transform: scale(1.04);
-    filter: brightness(1.05);
+    transform: scale(1.05);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 
-/* ================================
+/* =========================================
    CONTEÚDO DOS CARDS
-================================ */
+========================================= */
 
 article > div {
-    padding: 25px 27px 27px;
+    padding: 25px;
 }
 
 article h2 {
-    color: #4b2e83;
-
-    font-size: 26px;
-
-    line-height: 1.2;
-
-    margin-bottom: 7px;
+    color: #5b3b8c;
+    font-size: 27px;
+    margin-bottom: 5px;
 }
 
 article p {
-    font-size: 15px;
-
-    margin-bottom: 17px;
+    margin-bottom: 15px;
 }
+
+
+/* =========================================
+   AUTOR
+========================================= */
 
 .artigo-autor {
     color: #777;
-
-    font-size: 13px;
-
+    font-size: 14px;
     font-style: italic;
-
-    margin-bottom: 18px;
 }
 
 
-/* ================================
+/* =========================================
    FONTE
-================================ */
+========================================= */
 
 .artigo-fonte {
     color: #777;
-
-    font-size: 13px;
-
-    border-top: 1px solid #eee;
-
-    padding-top: 15px;
-
+    font-size: 14px;
     margin-top: 20px;
 }
 
 .artigo-fonte a {
-    color: #62419a;
-
+    color: #6a45a0;
     font-weight: bold;
-
     text-decoration: none;
 
-    transition: color 0.25s ease;
+    transition: color 0.3s ease;
 }
 
 .artigo-fonte a:hover {
-    color: #e14b68;
-
+    color: #e6395d;
     text-decoration: underline;
 }
 
 
-/* ================================
+/* =========================================
    BOTÕES
-================================ */
+========================================= */
 
 button {
-    border: 0;
+    border: none;
+    background-color: #eeeeee;
 
-    background: #f0edf3;
+    padding: 10px 15px;
+    margin-right: 8px;
 
-    color: #39323f;
-
-    padding: 9px 15px;
-
-    margin-right: 7px;
-
-    border-radius: 22px;
-
-    font-size: 14px;
+    border-radius: 20px;
 
     cursor: pointer;
 
+    font-size: 15px;
+
     transition:
-        background 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
+
+
+/* Hover dos botões */
 
 button:hover {
-    background: #e9def5;
+    background-color: #ffe1e6;
 
-    transform: translateY(-2px);
+    transform: scale(1.08);
 
-    box-shadow: 0 4px 10px rgba(70, 45, 100, 0.12);
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-button span {
-    font-weight: bold;
-    margin-left: 3px;
-}
+
+/* Botão depois de receber curtida */
 
 .like-button.curtido {
-    background: #e05270;
+    background-color: #e6395d;
     color: white;
 }
 
 
-/* ================================
+/* =========================================
    ANIMAÇÃO DE ENTRADA
-================================ */
+========================================= */
 
-@keyframes entrada {
+@keyframes aparecer {
 
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(30px);
     }
 
     to {
@@ -239,58 +234,58 @@ button span {
 
 }
 
+
+/* =========================================
+   ATRASO DOS CARDS
+========================================= */
+
 article:nth-child(1) {
-    animation-delay: 0.05s;
+    animation-delay: 0.1s;
 }
 
 article:nth-child(2) {
-    animation-delay: 0.15s;
+    animation-delay: 0.2s;
 }
 
 article:nth-child(3) {
-    animation-delay: 0.25s;
+    animation-delay: 0.3s;
 }
 
 article:nth-child(4) {
-    animation-delay: 0.35s;
+    animation-delay: 0.4s;
 }
 
 article:nth-child(5) {
-    animation-delay: 0.45s;
+    animation-delay: 0.5s;
 }
 
 
-/* ================================
-   TABLET
-================================ */
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 800px) {
 
     main {
-        width: 92%;
-
         grid-template-columns: 1fr;
-
-        max-width: 650px;
+        width: 92%;
     }
 
 }
 
 
-/* ================================
+/* =========================================
    CELULAR
-================================ */
+========================================= */
 
-@media (max-width: 550px) {
+@media (max-width: 500px) {
 
     header {
-        padding: 40px 18px;
-
-        margin-bottom: 30px;
+        padding: 35px 15px;
     }
 
     header h1 {
-        font-size: 29px;
+        font-size: 28px;
     }
 
     header p {
@@ -299,53 +294,29 @@ article:nth-child(5) {
 
     main {
         width: 94%;
-
-        gap: 22px;
-
-        margin-bottom: 40px;
+        margin: 25px auto;
+        gap: 20px;
     }
 
     article > img {
-        height: 210px;
+        height: 200px;
     }
 
     article > div {
-        padding: 21px;
+        padding: 20px;
     }
 
     article h2 {
-        font-size: 23px;
+        font-size: 24px;
     }
 
     article p {
         font-size: 15px;
-
         text-align: left;
     }
 
-}
-
-
-/* ================================
-   CELULARES PEQUENOS
-================================ */
-
-@media (max-width: 380px) {
-
-    header h1 {
-        font-size: 25px;
-    }
-
-    header p {
-        font-size: 14px;
-    }
-
-    article > img {
-        height: 180px;
-    }
-
-    article > div {
-        padding: 18px;
+    button {
+        margin-bottom: 8px;
     }
 
 }

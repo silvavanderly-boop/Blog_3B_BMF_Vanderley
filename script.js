@@ -1,53 +1,58 @@
-// ==========================================
-// CONTADOR DE CURTIDAS
-// ==========================================
+// Pega todos os artigos da página
+const artigos = document.querySelectorAll("article");
 
-const botoes = document.querySelectorAll("article button");
+artigos.forEach((artigo, indice) => {
 
-botoes.forEach((botao) => {
+    // Pega os dois botões do artigo
+    const botoes = artigo.querySelectorAll("button");
 
-    botao.addEventListener("click", () => {
+    // Primeiro botão = ❤️
+    // Segundo botão = 👍
+    botoes.forEach((botao, tipo) => {
 
-        // Encontra o artigo onde o botão foi clicado
-        const artigo = botao.closest("article");
+        // Cria uma identificação única para cada artigo e botão
+        const chave = "blog3b_artigo_" + indice + "_botao_" + tipo;
 
-        // Encontra o título do artigo
-        const titulo = artigo.querySelector("h2").textContent;
+        // Verifica se esse navegador já curtiu
+        if (localStorage.getItem(chave) === "curtiu") {
 
-        // Pega o emoji do botão
-        const emoji = botao.textContent.includes("❤️") ? "coracao" : "curtida";
-
-        // Cria uma identificação única para cada botão
-        const chave = "curtida_" + titulo + "_" + emoji;
-
-        // Verifica se a pessoa já curtiu
-        const jaCurtiu = localStorage.getItem(chave);
-
-        if (jaCurtiu === "sim") {
-
-            alert("Você já curtiu este artigo!");
-
-            return;
+            botao.disabled = true;
+            botao.style.opacity = "0.6";
+            botao.style.cursor = "not-allowed";
         }
 
-        // Pega o contador
-        const contador = botao.querySelector("span");
+        botao.addEventListener("click", function () {
 
-        // Aumenta o número de curtidas
-        let numero = Number(contador.textContent);
+            // Se já curtiu, não faz nada
+            if (localStorage.getItem(chave) === "curtiu") {
+                return;
+            }
 
-        numero++;
+            // Pega o número dentro do span
+            const contador = botao.querySelector("span");
 
-        contador.textContent = numero;
+            // Converte o número para inteiro
+            let numero = parseInt(contador.textContent);
 
-        // Guarda no navegador que já curtiu
-        localStorage.setItem(chave, "sim");
+            // Adiciona uma curtida
+            numero++;
 
-        // Desativa o botão
-        botao.disabled = true;
+            // Atualiza o contador
+            contador.textContent = numero;
 
-        // Muda a aparência
-        botao.classList.add("curtido");
+            // Salva que esse navegador já curtiu
+            localStorage.setItem(chave, "curtiu");
+
+            // Desativa o botão
+            botao.disabled = true;
+
+            // Efeito visual
+            botao.style.backgroundColor = "#6a45a0";
+            botao.style.color = "white";
+            botao.style.cursor = "not-allowed";
+            botao.style.opacity = "0.7";
+
+        });
 
     });
 

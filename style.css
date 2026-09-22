@@ -1,50 +1,416 @@
-:root{
-    --cor-primaria: #37096C;
-    --cor-secundaria: #913FEE;
-    --cor-fundo: #ffffff;
-    --cor-texto: #000000;
-    --cor-contraste: #C193F6;
-    --cor-botao: #7514E3;
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    max-width: 100vw;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+html {
+    scroll-behavior: smooth;
 }
 
-header {
-    background-color: var(--cor-primaria);
-    color: var(var(--cor-contraste));
-    text-align: center;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f4f6f9;
+
+    color: #222;
+
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+
     margin: 0 auto;
-    padding: 16px;
 }
 
-main{
-    background-color: var(--cor-fundo);
-    color: var(--cor-primaria);
-    margin: 0 auto;
-    padding: 16px;
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.header {
+    background-color: #161b33;
+
+    color: white;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header-content {
+    min-height: 80px;
+
     display: flex;
-    flex-wrap: wrap;
-}
 
-article{
-    display:flex;
-    box-shadow: 2px 2px 10px rgb(0,0,0, 0.3);
-    margin: 16px;
-    gap: 16px;
-    padding: 16px;
-    flex: 1 1 25%;
-    flex-direction: column;
-    text-align: center;
     align-items: center;
-    justify-content: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
 }
 
-img{
-    width: 80px;
-    height: 80px;
+.logo h1 {
+    font-size: 26px;
+
+    color: #ffffff;
+}
+
+.logo p {
+    font-size: 13px;
+
+    color: #b8bfdc;
 }
 
 
+/* ========================================
+   MENU
+======================================== */
+
+.menu {
+    display: flex;
+
+    gap: 25px;
+}
+
+.menu a {
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    position: relative;
+
+    transition:
+        color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #8f7aea;
+}
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+
+    height: 2px;
+
+    left: 0;
+
+    bottom: -6px;
+
+    background-color: #8f7aea;
+
+    transition:
+        width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    background:
+        linear-gradient(
+            135deg,
+            #242b55,
+            #4b3d91
+        );
+
+    color: white;
+
+    padding: 100px 0;
+
+    text-align: center;
+}
+
+.hero-tag {
+    display: inline-block;
+
+    background-color: rgba(255, 255, 255, 0.15);
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: #e0e2f0;
+
+    font-size: 18px;
+}
+
+.hero-button {
+    display: inline-block;
+
+    background-color: white;
+
+    color: #453582;
+
+    padding: 12px 25px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+
+    background-color: #f0edff;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ========================================
+   SEÇÃO DE ARTIGOS
+======================================== */
+
+.articles-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: #6d55c7;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+
+    margin: 5px 0 10px;
+}
+
+.section-title p {
+    color: #777;
+}
+
+
+/* ========================================
+   GRID
+======================================== */
+
+.articles-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* ========================================
+   CARDS
+======================================== */
+
+.card {
+    background-color: white;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation:
+        fadeIn 0.8s ease both;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.16);
+}
+
+
+/* ========================================
+   IMAGENS DOS CARDS
+======================================== */
+
+.card > img {
+    width: 100%;
+
+    height: 210px;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.card:hover > img {
+    transform: scale(1.05);
+
+    filter: brightness(1.05);
+}
+
+
+/* ========================================
+   CONTEÚDO DOS CARDS
+======================================== */
+
+.card-content {
+    padding: 25px;
+}
+
+.category {
+    color: #7056c9;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.card h3 {
+    font-size: 21px;
+
+    margin: 8px 0 12px;
+
+    color: #222;
+}
+
+.card p {
+    color: #666;
+
+    font-size: 15px;
+
+    margin-bottom: 18px;
+}
+
+.read-more {
+    display: inline-block;
+
+    color: #654bc0;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.read-more:hover {
+    color: #30206f;
+
+    transform: translateX(4px);
+}
+
+
+/* ========================================
+   BOTÃO DE CURTIDA
+======================================== */
+
+.like-button {
+    display: block;
+
+    width: 100%;
+
+    border: none;
+
+    background-color: #f1f2f6;
+
+    color: #333;
+
+    padding: 10px 15px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.like-button:hover {
+    background-color: #ffe3e8;
+
+    color: #e6395d;
+
+    transform: scale(1.03);
+}

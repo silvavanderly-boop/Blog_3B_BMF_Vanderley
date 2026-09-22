@@ -1,112 +1,456 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog do 3° B - Exatas</title>
+
+    <meta
+        name="description"
+        content="Blog sobre tecnologia, programação e desenvolvimento web"
+    >
+
+    <title>Blog 3B - Tecnologia</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1>Titulo do blog da escola</h1>
 
+    <!-- CABEÇALHO -->
 
-    <p>pequeno texto informativo sobre o blog escolar</p>
-  </header>
+    <header class="header">
 
-   <main>
-    <article>
-        <img src="img/images.jpeg" alt="informação sobre minha imagem" srcset="">
-        <div>
-            <h2>História</h2>
-            <p class="artigo-autor">organização: Vanderley</p>
-            <p>O Colégio Estadual Branca da Mota Fernandes está localizado em Maringá, no Paraná,
-e faz parte da rede pública estadual de ensino. Ao longo de sua trajetória, tornou-se
-uma referência para a comunidade local por oferecer educação de qualidade e
-incentivar a formação de cidadãos responsáveis. A escola atende diferentes etapas da
-educação básica e participa de projetos que estimulam o desenvolvimento acadêmico,
-social e cultural dos estudantes.</p>
+        <div class="container header-content">
 
-            <p class="artigo-fonte">fonte: ..... <a href=""></a>  </p>
-            <button>❤️<span>0</span></button>
-            <button>👍​<span>0</span></button>
+            <div class="logo">
+                <h1>Blog 3B</h1>
+                <p>Tecnologia e Programação</p>
+            </div>
+
+            <nav class="menu">
+
+                <a href="#inicio">Início</a>
+
+                <a href="#artigos">Artigos</a>
+
+                <a href="#sobre">Sobre</a>
+
+                <a href="#contato">Contato</a>
+
+            </nav>
+
         </div>
-    </article>
 
-    
+    </header>
 
-    <article>
-        <img src="img/images (1).jpeg"informação sobre minha imagem" srcset="">
-        <div>
-            <h2>Festa Junina</h2>
-            <p class="artigo-autor">organização: Vanderley</p>
-            <p>A Festa Junina é um dos eventos mais tradicionais da escola. Durante a comemoração,
-o ambiente é decorado com bandeirinhas e elementos típicos da cultura brasileira. Os
-alunos participam de apresentações de quadrilha, danças, brincadeiras e barracas com
-comidas típicas como milho, pipoca, cachorro-quente e doces. Além de proporcionar
-diversão, o evento fortalece a integração entre alunos, professores, funcionários e
-familiares.</p>
 
-            <p class="artigo-fonte">fonte: ..... <a href=""></a>  </p>
-            <button>❤️<span>0</span></button>
-            <button>👍​<span>0</span></button>
-        </div>
-    </article>
+    <!-- CONTEÚDO PRINCIPAL -->
 
-    
-    <article>
-        <img src="img/images (2).jpeg" alt="informação sobre minha imagem" srcset="">
-        <div>
-            <h2>Estrutura</h2>
-            <p class="artigo-autor">organização: Vanderley</p>
-            <p>O colégio possui salas de aula, biblioteca, laboratórios, quadra esportiva, pátio,
-secretaria e espaços administrativos. Esses ambientes permitem a realização de aulas
-teóricas, atividades práticas, projetos escolares e eventos culturais, contribuindo para
-um ensino mais completo e um ambiente adequado para a aprendizagem.</p>
+    <main id="inicio">
 
-            <p class="artigo-fonte">fonte: ..... <a href=""></a>  </p>
-            <button>❤️<span>0</span></button>
-            <button>👍​<span>0</span></button>
-        </div>
-    </article>
+        <!-- APRESENTAÇÃO -->
 
-    
-    <article>
-        <img src="img/images2.jpeg" alt="informação sobre minha imagem" srcset="">
-        <div>
-            <h2>Feira de Ciências</h2>
-            <p class="artigo-autor">organização: Vanderley</p>
-            <p>A Feira de Ciências é um momento em que os estudantes apresentam pesquisas,
-experimentos e projetos desenvolvidos durante o ano letivo. O evento incentiva a
-curiosidade, o pensamento científico, a criatividade e o trabalho em equipe. Os
-visitantes podem conhecer experiências relacionadas à Física, Química, Biologia,
-Matemática e Tecnologia.</p>
+        <section class="hero">
 
-            <p class="artigo-fonte">fonte: ..... <a href=""></a>  </p>
-            <button>❤️<span>0</span></button>
-            <button>👍​<span>0</span></button>
-        </div>
-    </article>
+            <div class="container">
 
-    
-    <article>
-        <img src="img/images3.jpeg" alt="informação sobre minha imagem" srcset="">
-        <div>
-            <h2>Conquistas</h2>
-            <p class="artigo-autor">organização: Vanderley</p>
-            <p>O Colégio Branca da Mota Fernandes participa de atividades esportivas, culturais e
-científicas que valorizam o desempenho dos estudantes. A escola também é conhecida
-por incentivar projetos, apresentações e ações que fortalecem a participação dos
-alunos e aproximam a comunidade do ambiente escolar.</p>
+                <span class="hero-tag">
+                    TECNOLOGIA
+                </span>
 
-            <p class="artigo-fonte">fonte: ..... <a href=""></a>  </p>
-            <button>❤️<span>0</span></button>
-            <button>👍​<span>0</span></button>
-        </div>
-    </article>
+                <h2>
+                    Bem-vindo ao nosso blog
+                </h2>
+
+                <p>
+                    Conteúdos sobre tecnologia, programação,
+                    desenvolvimento web e inovação.
+                </p>
+
+                <a href="#artigos" class="hero-button">
+                    Ver artigos
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARTIGOS -->
+
+        <section id="artigos" class="articles-section">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>CONTEÚDO</span>
+
+                    <h2>
+                        Últimos artigos
+                    </h2>
+
+                    <p>
+                        Confira nossos conteúdos sobre tecnologia.
+                    </p>
+
+                </div>
+
+
+                <div class="articles-grid">
+
+
+                    <!-- ARTIGO 1 -->
+
+                    <article class="card">
+
+                        <img
+                            src="img/programacao.jpg"
+                            alt="Programação"
+                        >
+
+                        <div class="card-content">
+
+                            <span class="category">
+                                PROGRAMAÇÃO
+                            </span>
+
+                            <h3>
+                                A importância da programação
+                            </h3>
+
+                            <p>
+                                A programação está presente em
+                                diversos aspectos da tecnologia.
+                                Aprender a programar pode ajudar
+                                a desenvolver soluções e projetos
+                                inovadores.
+                            </p>
+
+                            <a href="#" class="read-more">
+                                Ler mais →
+                            </a>
+
+                            <button
+                                class="like-button"
+                                onclick="curtir(this)"
+                            >
+                                ❤️ Curtir
+                                <span>0</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ARTIGO 2 -->
+
+                    <article class="card">
+
+                        <img
+                            src="img/tecnologia.jpg"
+                            alt="Tecnologia"
+                        >
+
+                        <div class="card-content">
+
+                            <span class="category">
+                                TECNOLOGIA
+                            </span>
+
+                            <h3>
+                                A tecnologia no nosso cotidiano
+                            </h3>
+
+                            <p>
+                                A tecnologia transformou a maneira
+                                como estudamos, trabalhamos e nos
+                                comunicamos. Ela está cada vez mais
+                                presente no nosso dia a dia.
+                            </p>
+
+                            <a href="#" class="read-more">
+                                Ler mais →
+                            </a>
+
+                            <button
+                                class="like-button"
+                                onclick="curtir(this)"
+                            >
+                                ❤️ Curtir
+                                <span>0</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ARTIGO 3 -->
+
+                    <article class="card">
+
+                        <img
+                            src="img/internet.jpg"
+                            alt="Internet"
+                        >
+
+                        <div class="card-content">
+
+                            <span class="category">
+                                INTERNET
+                            </span>
+
+                            <h3>
+                                Como a internet mudou o mundo
+                            </h3>
+
+                            <p>
+                                A internet facilitou o acesso à
+                                informação e permitiu que pessoas
+                                do mundo inteiro pudessem se
+                                comunicar rapidamente.
+                            </p>
+
+                            <a href="#" class="read-more">
+                                Ler mais →
+                            </a>
+
+                            <button
+                                class="like-button"
+                                onclick="curtir(this)"
+                            >
+                                ❤️ Curtir
+                                <span>0</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ARTIGO 4 -->
+
+                    <article class="card">
+
+                        <img
+                            src="img/inteligencia-artificial.jpg"
+                            alt="Inteligência Artificial"
+                        >
+
+                        <div class="card-content">
+
+                            <span class="category">
+                                IA
+                            </span>
+
+                            <h3>
+                                Inteligência Artificial
+                            </h3>
+
+                            <p>
+                                A inteligência artificial permite
+                                desenvolver sistemas capazes de
+                                realizar tarefas que normalmente
+                                exigiriam inteligência humana.
+                            </p>
+
+                            <a href="#" class="read-more">
+                                Ler mais →
+                            </a>
+
+                            <button
+                                class="like-button"
+                                onclick="curtir(this)"
+                            >
+                                ❤️ Curtir
+                                <span>0</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ARTIGO 5 -->
+
+                    <article class="card">
+
+                        <img
+                            src="img/desenvolvimento-web.jpg"
+                            alt="Desenvolvimento Web"
+                        >
+
+                        <div class="card-content">
+
+                            <span class="category">
+                                WEB
+                            </span>
+
+                            <h3>
+                                Desenvolvimento Web
+                            </h3>
+
+                            <p>
+                                HTML, CSS e JavaScript são algumas
+                                das principais tecnologias utilizadas
+                                na criação de páginas e aplicações
+                                para a internet.
+                            </p>
+
+                            <a href="#" class="read-more">
+                                Ler mais →
+                            </a>
+
+                            <button
+                                class="like-button"
+                                onclick="curtir(this)"
+                            >
+                                ❤️ Curtir
+                                <span>0</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ARTIGO 6 -->
+
+                    <article class="card">
+
+                        <img
+                            src="img/inovacao.jpg"
+                            alt="Inovação"
+                        >
+
+                        <div class="card-content">
+
+                            <span class="category">
+                                INOVAÇÃO
+                            </span>
+
+                            <h3>
+                                Inovação e futuro
+                            </h3>
+
+                            <p>
+                                Novas tecnologias estão surgindo
+                                constantemente e mudando a forma
+                                como interagimos com o mundo.
+                            </p>
+
+                            <a href="#" class="read-more">
+                                Ler mais →
+                            </a>
+
+                            <button
+                                class="like-button"
+                                onclick="curtir(this)"
+                            >
+                                ❤️ Curtir
+                                <span>0</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE -->
+
+        <section id="sobre" class="about">
+
+            <div class="container">
+
+                <span class="section-label">
+                    SOBRE
+                </span>
+
+                <h2>
+                    Sobre o Blog 3B
+                </h2>
+
+                <p>
+                    Este blog foi desenvolvido como um projeto
+                    para praticar HTML, CSS e JavaScript.
+                    O objetivo é apresentar conteúdos relacionados
+                    à tecnologia de forma simples e organizada.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTATO -->
+
+        <section id="contato" class="contact">
+
+            <div class="container">
+
+                <h2>
+                    Entre em contato
+                </h2>
+
+                <p>
+                    Gostou do conteúdo? Entre em contato conosco.
+                </p>
+
+                <a
+                    href="mailto:contato@blog3b.com"
+                    class="contact-button"
+                >
+                    Enviar mensagem
+                </a>
+
+            </div>
+
+        </section>
 
     </main>
-</body>
- <script src="script.js"></script>
-</html>
 
+
+    <!-- RODAPÉ -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 Blog 3B - Todos os direitos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+
+    <button
+        id="topButton"
+        class="top-button"
+        onclick="voltarAoTopo()"
+        aria-label="Voltar ao topo"
+    >
+        ↑
+    </button>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

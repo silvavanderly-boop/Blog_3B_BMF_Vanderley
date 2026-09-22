@@ -1,52 +1,66 @@
-document.addEventlistener("DOMContentloaded", () =>{
-    prepararReacoes();
-    prepararAnimacaoCards();
-    criarBotaoTopo();
-})
+// ========================================
+// SCRIPT.JS - BLOG
+// ========================================
+
+// Aguarda o carregamento completo da página
+document.addEventListener("DOMContentLoaded", function () {
+
+    // ========================================
+    // CONTADOR DE CURTIDAS
+    // ========================================
+
+    const botoesCurtir = document.querySelectorAll(".like-button");
+
+    botoesCurtir.forEach(function (botao) {
+
+        botao.addEventListener("click", function () {
+
+            // Encontra o número de curtidas dentro do botão
+            const contador = botao.querySelector("span");
+
+            // Pega o número atual
+            let curtidas = Number(contador.textContent);
+
+            // Adiciona uma curtida
+            curtidas++;
+
+            // Atualiza o número na tela
+            contador.textContent = curtidas;
+
+            // Adiciona a classe para mudar a aparência
+            botao.classList.add("curtido");
+
+        });
+
+    });
 
 
-function preparaReacoes() {
+    // ========================================
+    // ANIMAÇÃO DOS CARDS
+    // ========================================
+
     const artigos = document.querySelectorAll("article");
 
-    artigos.forEach((artigo, indice) =>{
+    artigos.forEach(function (artigo, index) {
 
-        const botoes = artogp.querySelectorAll("button");
+        // Adiciona um pequeno atraso entre os cards
+        artigo.style.animationDelay = (index * 0.15) + "s";
 
-        if(botoes.lenght < 2){
-            return;
-        }
+    });
 
-        const botaoUM = botoes[0];
-        const botaoDOIS =[1];
-        const contadorBotaoUM = botaoUM.querySelector("span");
-        const contadorBotaoDOIS = botaoDOIS.querySelector("span");
 
-        const idCard = 'card-$(indice + 1)';
-        
-        const chaveBotaoUM = '$(idCard)-botaoUM';
-        const chaveBotaoDOIS = '$(idCard)-botaoDOIS';
+    // ========================================
+    // EFEITO NOS LINKS
+    // ========================================
 
-        let UM = Number(localStorage.getItem(chaveBotaoUM)) || 0;
-        let DOIS = Number(localStorage.getItem(chaveBotaoDOIS)) || 0;
+    const links = document.querySelectorAll("a");
 
-       contadorBOtaoUM.tectContent = UM;
-       contadorBOtaoDOIS.tectContent = DOIS;
+    links.forEach(function (link) {
 
-       botaoUM.addEventListener("click",()=>{
-        UM++;
-        contadorBotaoUM.textContent = UM;
+        link.addEventListener("mouseenter", function () {
+            link.style.transition = "0.3s";
+        });
 
-        localStorage.setItem(
-            chaveBotaoUM, UM
-        );
-       });
-       botaoDOIS.addEventListener("click",()=>{
-        DOIS++;
-        contadorBotaoDOIS.textContent = DOIS;
+    });
 
-        localStorage.setItem(
-            chaveBotaoDOIS, DOIS
-        );
-       });
-        })
-}
+});

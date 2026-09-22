@@ -1,6 +1,6 @@
-/* =========================================
-   CONFIGURAÇÕES GERAIS
-========================================= */
+/* ================================
+   CONFIGURAÇÃO GERAL
+================================ */
 
 * {
     margin: 0;
@@ -10,221 +10,226 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f1f8;
-    color: #292333;
+    background: #f5f3f7;
+    color: #29252f;
     line-height: 1.6;
 }
 
 
-/* =========================================
+/* ================================
    CABEÇALHO
-========================================= */
+================================ */
 
 header {
-    background: linear-gradient(135deg, #5b3b8c, #8b65b5);
+    background: linear-gradient(135deg, #4b2e83, #7652a8);
     color: white;
     text-align: center;
-    padding: 50px 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 55px 20px;
+    margin-bottom: 45px;
 }
 
 header h1 {
     font-size: 38px;
-    margin-bottom: 10px;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
 header p {
-    font-size: 18px;
-    opacity: 0.9;
+    font-size: 17px;
+    color: #eee8f7;
 }
 
 
-/* =========================================
-   ÁREA PRINCIPAL
-========================================= */
+/* ================================
+   CONTEÚDO PRINCIPAL
+================================ */
 
 main {
     width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-}
+    max-width: 1150px;
+    margin: 0 auto 60px;
 
-
-/* =========================================
-   ORGANIZAÇÃO DOS ARTIGOS
-========================================= */
-
-main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
 }
 
 
-/* =========================================
+/* ================================
    CARDS
-========================================= */
+================================ */
 
 article {
-    background-color: white;
-    border-radius: 16px;
+    background: #ffffff;
+
+    border-radius: 18px;
+
     overflow: hidden;
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+    border: 1px solid #e8e3ed;
+
+    box-shadow: 0 6px 18px rgba(50, 35, 70, 0.08);
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
 
-    animation: aparecer 0.8s ease both;
+    animation: entrada 0.7s ease both;
 }
-
-
-/* Efeito quando passa o mouse */
 
 article:hover {
-    transform: translateY(-7px);
+    transform: translateY(-6px);
 
-    box-shadow:
-        0 12px 28px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 14px 30px rgba(50, 35, 70, 0.16);
 }
 
 
-/* =========================================
-   IMAGENS DOS ARTIGOS
-========================================= */
+/* ================================
+   IMAGENS
+================================ */
 
 article > img {
     width: 100%;
-    height: 230px;
-
-    object-fit: cover;
+    height: 240px;
 
     display: block;
 
+    object-fit: cover;
+
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.35s ease,
+        filter 0.35s ease;
 }
-
-
-/* Efeito solicitado na atividade */
 
 article:hover > img {
-    transform: scale(1.05);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.25);
+    transform: scale(1.04);
+    filter: brightness(1.05);
 }
 
 
-/* =========================================
+/* ================================
    CONTEÚDO DOS CARDS
-========================================= */
+================================ */
 
 article > div {
-    padding: 25px;
+    padding: 25px 27px 27px;
 }
 
 article h2 {
-    color: #5b3b8c;
-    font-size: 27px;
-    margin-bottom: 5px;
+    color: #4b2e83;
+
+    font-size: 26px;
+
+    line-height: 1.2;
+
+    margin-bottom: 7px;
 }
 
 article p {
-    margin-bottom: 15px;
+    font-size: 15px;
+
+    margin-bottom: 17px;
 }
-
-
-/* =========================================
-   AUTOR
-========================================= */
 
 .artigo-autor {
     color: #777;
-    font-size: 14px;
+
+    font-size: 13px;
+
     font-style: italic;
+
+    margin-bottom: 18px;
 }
 
 
-/* =========================================
+/* ================================
    FONTE
-========================================= */
+================================ */
 
 .artigo-fonte {
     color: #777;
-    font-size: 14px;
+
+    font-size: 13px;
+
+    border-top: 1px solid #eee;
+
+    padding-top: 15px;
+
     margin-top: 20px;
 }
 
 .artigo-fonte a {
-    color: #6a45a0;
+    color: #62419a;
+
     font-weight: bold;
+
     text-decoration: none;
 
-    transition: color 0.3s ease;
+    transition: color 0.25s ease;
 }
 
 .artigo-fonte a:hover {
-    color: #e6395d;
+    color: #e14b68;
+
     text-decoration: underline;
 }
 
 
-/* =========================================
+/* ================================
    BOTÕES
-========================================= */
+================================ */
 
 button {
-    border: none;
-    background-color: #eeeeee;
+    border: 0;
 
-    padding: 10px 15px;
-    margin-right: 8px;
+    background: #f0edf3;
 
-    border-radius: 20px;
+    color: #39323f;
+
+    padding: 9px 15px;
+
+    margin-right: 7px;
+
+    border-radius: 22px;
+
+    font-size: 14px;
 
     cursor: pointer;
 
-    font-size: 15px;
-
     transition:
-        transform 0.3s ease,
-        background-color 0.3s ease,
-        box-shadow 0.3s ease;
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
-
-
-/* Hover dos botões */
 
 button:hover {
-    background-color: #ffe1e6;
+    background: #e9def5;
 
-    transform: scale(1.08);
+    transform: translateY(-2px);
 
-    box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 10px rgba(70, 45, 100, 0.12);
 }
 
-
-/* Botão depois de receber curtida */
+button span {
+    font-weight: bold;
+    margin-left: 3px;
+}
 
 .like-button.curtido {
-    background-color: #e6395d;
+    background: #e05270;
     color: white;
 }
 
 
-/* =========================================
+/* ================================
    ANIMAÇÃO DE ENTRADA
-========================================= */
+================================ */
 
-@keyframes aparecer {
+@keyframes entrada {
 
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(25px);
     }
 
     to {
@@ -234,58 +239,58 @@ button:hover {
 
 }
 
-
-/* =========================================
-   ATRASO DOS CARDS
-========================================= */
-
 article:nth-child(1) {
-    animation-delay: 0.1s;
+    animation-delay: 0.05s;
 }
 
 article:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: 0.15s;
 }
 
 article:nth-child(3) {
-    animation-delay: 0.3s;
+    animation-delay: 0.25s;
 }
 
 article:nth-child(4) {
-    animation-delay: 0.4s;
+    animation-delay: 0.35s;
 }
 
 article:nth-child(5) {
-    animation-delay: 0.5s;
+    animation-delay: 0.45s;
 }
 
 
-/* =========================================
-   RESPONSIVIDADE
-========================================= */
+/* ================================
+   TABLET
+================================ */
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
 
     main {
-        grid-template-columns: 1fr;
         width: 92%;
+
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
     }
 
 }
 
 
-/* =========================================
+/* ================================
    CELULAR
-========================================= */
+================================ */
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
 
     header {
-        padding: 35px 15px;
+        padding: 40px 18px;
+
+        margin-bottom: 30px;
     }
 
     header h1 {
-        font-size: 28px;
+        font-size: 29px;
     }
 
     header p {
@@ -294,29 +299,53 @@ article:nth-child(5) {
 
     main {
         width: 94%;
-        margin: 25px auto;
-        gap: 20px;
+
+        gap: 22px;
+
+        margin-bottom: 40px;
     }
 
     article > img {
-        height: 200px;
+        height: 210px;
     }
 
     article > div {
-        padding: 20px;
+        padding: 21px;
     }
 
     article h2 {
-        font-size: 24px;
+        font-size: 23px;
     }
 
     article p {
         font-size: 15px;
+
         text-align: left;
     }
 
-    button {
-        margin-bottom: 8px;
+}
+
+
+/* ================================
+   CELULARES PEQUENOS
+================================ */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    article > img {
+        height: 180px;
+    }
+
+    article > div {
+        padding: 18px;
     }
 
 }
